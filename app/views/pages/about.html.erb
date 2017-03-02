@@ -1,21 +1,17 @@
-
-<% content_for(:title, "About Me") %>
+<% content_for(:title, "About") %>
 <div id="about">
-<div class="container">
-            <div class="row-fluid">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">About Me</h2>
-                    <p class="lead">Welcome to the Star Wars store. This is an application that is being built as a project for WEBD435 at Franklin University</p>
-                    <p class="lead">This application is an online store that will allow users to sign up, browse for Star Wars products, add them to a shopping cart, and complete a transaction.</p>
-                    <p class="lead">This is the beginning stages of the app right now. Check back later on to see how it is coming along.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-1 col-sm-6">
-                  <%= image_tag "c3_luke.jpg", :class => "image-responsive" %>
-                </div>
-            </div>
+  <div class="container">
+    <div class="featurette-divider">
+           <%= (image_tag('slogo.jpg', alt: '', class: "featurette-image img-responsive pull-right" )) %>
+            <h2 class="featurette-heading">A long time ago in a galaxy far far away...</h2>
+            <br>
+            <br>
+            <h2>The Star Wars Store was born</h2>
+           <p class="lead">This is a project that is being developed a my first Ruby on Rails application. This application is an online store for anyone who loves Star Wars.</p>
+           <p class="lead">This application is being built in Ruby on Rails using the Bootstrap framework. I wanted to make an application that was fully responsive.There is also some JavaScript and jQuery in application.</p>
+           <p class="lead">Some of the main features will be a shopping cart, payment scenarios, managing credit card details, and subscription plans. If I have enought time there will also be a blog integrated into the application</p>
+       </div>
 
-        </div>
-        <!-- /.container -->
+       <hr class="featurette-divider">
+</div>
 </div>
