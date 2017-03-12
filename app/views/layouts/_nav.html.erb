@@ -1,5 +1,5 @@
 <ul class="nav navbar-nav navbar-right">
-	<li><%= link_to "Products", products_product_path %></li>
+	<li><%= link_to "Products", products_path %></li>
 	<li><%= link_to "About", pages_about_path %></li>
 	<%if signed_in?%>
     <li><%=link_to current_user.email, edit_user_registration_path%></li>
