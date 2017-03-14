@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :products
 
+  resource :cart, only: [:show] do
+    get "add/:id", :as => "add", action: 'add'
+  end
+
   get 'products/index' => 'products#index'
   get 'pages/about'
 

@@ -4,9 +4,16 @@
 	<%if signed_in?%>
     <li><%=link_to current_user.email, edit_user_registration_path%></li>
     <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+		<% if @cart %>
+	<% if @cart.empty? %>
+		<li>Your cart is empty.</li>
+	<% else %>
+		<li><%= link_to "You have #{pluralize @cart.count, "item"}.", cart_path %></li>
+	<% end %>
+<% end %>
   <%else%>
     <li><%=link_to "Register", new_user_registration_path%></li>
     <li><%=link_to "Login", new_user_session_path%></li>
   <%end%>
-		<!-- Login Will later go here -->
+	
 </ul>

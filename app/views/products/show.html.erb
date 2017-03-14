@@ -1,1 +1,29 @@
-<h1>Individual products page</h1>
+<div id="products">
+
+<div class="container">
+
+<!-- Product Heading -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header"><%= @product.name %></h1>
+    </div>
+</div>
+<!-- end row -->
+
+<!-- Product description -->
+    <div class="row">
+
+      <div class="col-md-8">
+        <%= image_tag @product.image %>
+      </div>
+
+      <div class="col-md-4">
+        <h3><%= @product.name %></h3>
+        <p><%= @product.description %></p>
+          <h4>Price: <%= number_to_currency @product.price %></h4>
+           <%= link_to "Add to cart", add_cart_path %>
+           <%= link_to 'Back', products_path %>
+      </div>
+    </div>
+</div>
+</div>
