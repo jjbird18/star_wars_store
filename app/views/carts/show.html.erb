@@ -29,7 +29,8 @@
                         <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency item.product.price %></strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency @cart.total_price %></strong></td>
                         <td class="col-sm-1 col-md-1">
-                        <button type="button" class="btn btn-danger">
+                        <p><%= link_to 'remove', remove_cart_path(item.product_id), method: :delete %></p>
+
                     </tr>
                   <% end %>
 

@@ -9,12 +9,13 @@ def add
 
 end
 
-def destroy
-  @cart.items.destroy
-  respond_to do |format|
-    format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-    format.json { head :no_content }
+def remove
+  cart = session['cart']
+  item = cart['items'].find {|item| item ['product_id'] == params[:id] }
+  if item
+    cart['items'].delete item
   end
+  redirect_to cart_path
 end
 
 def show

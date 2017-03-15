@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show] do
     get "add/:id", :as => "add", action: 'add'
+    delete 'remove', path: 'destroy/:id'
   end
 
   get 'products/index' => 'products#index'
