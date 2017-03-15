@@ -5,8 +5,8 @@
     <li><%=link_to current_user.email, edit_user_registration_path%></li>
     <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
 		<% if @cart %>
-	<li><% if @cart.empty? %>
-		Your cart is empty.</li>
+		<% if @cart.empty? %>
+		<li><%= link_to "Your cart is empty." %></li>
 	<% else %>
 		<li><%= link_to "You have #{pluralize @cart.count, "item"}.", cart_path %></li>
 	<% end %>
