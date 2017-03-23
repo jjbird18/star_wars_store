@@ -13,6 +13,7 @@ def create
 )
 
 if @order_form.save
+  notify_user
   redirect_to products_path, notice: "Your order has been placed."
 else
   render "carts/checkout"
