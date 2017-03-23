@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
 before_action :initialize_cart
+before_action :authenticate_user!, except: [:index, :show]
 
 def add
   @cart.add_item params[:id]
@@ -19,7 +20,10 @@ def remove
 end
 
 def show
+end
 
+def checkout
+  @order_form = OrderForm.new user: current_user #user: User.current_user
 end
 
 end
