@@ -20,7 +20,11 @@ else
  end
 end
 
+private
 
+def notify_user
+  OrderMailer.order_confirmation(@order_form.order).deliver
+end
 
 
 
