@@ -24,7 +24,7 @@
                             </div>
                         </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                          <strong><%=  item.quantity %></strong></td>
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency item.product.price %></strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency @cart.total_price %></strong></td>
@@ -64,9 +64,8 @@
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></td>
                         <td>
-                        <button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
+                          <%= link_to "Checkout", checkout_cart_path, class: "btn btn-success" %>
+                      </td>
                     </tr>
                 </tbody>
             </table>

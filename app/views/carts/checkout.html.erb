@@ -1,0 +1,43 @@
+
+<h1>Checkout</h1>
+<h2>You are checking out the following products:</h2>
+<ul>
+  <% @cart.items.each do |item| %>
+    <li>
+      <em>
+        <%= item.quantity %>
+      </em>
+      <%= item.product.name %>
+      <%= number_to_currency item.total_price %>
+    </li>
+  <% end %>
+</ul>
+<p>
+  <strong>
+    Total price:
+    <%= number_to_currency @cart.total_price %>
+  </strong>
+</p>
+<%= form_for @order_form, url: orders_path do |f| %>
+
+  <h3>Add the following details to contiue:</h3>
+  <%= f.fields_for :user, f.object.user do |u| %>
+  <div class="row control-group">
+      <div class="form-group col-xs-12 floating-label-form-group controls">
+        <%= u.label :email %>
+        <%= u.email_field :email, class: "form-control", autofocus: true %>
+          <p class="help-block text-danger"></p>
+      </div>
+  </div>
+  <div class="row control-group">
+      <div class="form-group col-xs-12 floating-label-form-group controls">
+        <%= u.label :password %><br />
+        <%= u.password_field :password, class: "form-control", autocomplete: "off" %>
+      </div>
+  </div>
+  <% end %>
+  <div id="dropin"></div>
+  <p>
+    <%= f.submit "Place order", class: "btn btn-primary" %>
+  </p>
+<% end %>
