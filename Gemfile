@@ -36,6 +36,8 @@ gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
 
+gem "braintree", "~> 2.72.0"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -10,7 +10,14 @@ Rails.application.routes.draw do
     get :checkout
   end
 
-  resources :orders, only: [:index, :show, :create, :update]
+
+  resources :orders, only: [:index, :show, :create, :update] do
+    member do
+      get :new_payment
+      post :pay
+    end
+  end
+
 
   get 'products/index' => 'products#index'
   get 'pages/about'

@@ -36,8 +36,22 @@
       </div>
   </div>
   <% end %>
-  <div id="dropin"></div>
+  <div id="dropin">
+  <div id="payment-form"></div>
+  </div>
   <p>
     <%= f.submit "Place order", class: "btn btn-primary" %>
   </p>
 <% end %>
+
+
+<script>
+// We generated a client token for you so you can test out this code
+// immediately. In a production-ready integration, you will need to
+// generate a client token on your server (see section below).
+var clientToken = "<%= @client_token %>";
+
+braintree.setup(clientToken, "dropin", {
+  container: "payment-form"
+});
+</script>

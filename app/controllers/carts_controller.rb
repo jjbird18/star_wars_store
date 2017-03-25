@@ -24,6 +24,7 @@ end
 
 def checkout
   @order_form = OrderForm.new user: current_user #user: User.current_user
+  @client_token = Braintree::ClientToken.generate
 end
 
 end

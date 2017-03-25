@@ -45,6 +45,13 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+
+Braintree::Configuration.environment = :sandbox
+Braintree::Configuration.merchant_id = '5h9th8v6tk9w7byf'
+Braintree::Configuration.public_key = 'qk2stnb9psdjvn8z'
+Braintree::Configuration.private_key = '2f361845a12f69656d2696ec90bfe41f'
+
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
