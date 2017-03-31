@@ -13,9 +13,6 @@ def save
   end
 end
 
-
-
-
 private
 
 def valid
@@ -23,7 +20,6 @@ def valid
 end
 
 def persist
-
   @order = Order.create! user: user
   build_order_items
 end
