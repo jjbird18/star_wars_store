@@ -61,12 +61,7 @@
                     <%= f.text_field :phone, class: "form-control", placeholder: "Phone" %>
                   </p>
                 </div>
-                <div class="row">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <%= f.submit "Sign up", class: "btn btn-success btn-lg" %>
-                    </div>
-                </div>
-
+                  <%= f.submit "Sign up" %>
                 <% end %>
                 <div class="shared-login-links">
                     <%= render "devise/shared/links" %>
