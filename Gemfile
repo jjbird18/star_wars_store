@@ -38,6 +38,9 @@ gem 'carrierwave'
 
 gem "braintree", "~> 2.72.0"
 
+gem 'aws-sdk', '~> 2'
+gem 'fog-aws'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
