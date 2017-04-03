@@ -41,7 +41,9 @@ gem "braintree", "~> 2.72.0"
 gem 'aws-sdk', '~> 2'
 gem 'paperclip', '~> 5.1'
 
-# Use Capistrano for deployment
+
+
+# Use Capistrano for deployment using this
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
