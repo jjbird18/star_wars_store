@@ -39,7 +39,7 @@ gem 'carrierwave'
 gem "braintree", "~> 2.72.0"
 
 gem 'aws-sdk', '~> 2'
-gem 'fog', require:'fog/aws'
+gem 'paperclip', '~> 5.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
