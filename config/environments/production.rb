@@ -80,6 +80,12 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     }
 }
+
+Braintree::Configuration.environment = :sandbox
+Braintree::Configuration.merchant_id = '5h9th8v6tk9w7byf'
+Braintree::Configuration.public_key = 'qk2stnb9psdjvn8z'
+Braintree::Configuration.private_key = '2f361845a12f69656d2696ec90bfe41f'
+
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
