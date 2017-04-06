@@ -14,8 +14,9 @@
   <body>
   		<%= render 'layouts/header' %>
 
-  <%= content_tag :div, notice, class: "bg-success" %>
-  <%= content_tag :div, alert, class: "bg-danger" %>
+      <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+      <% end %>
     <%= yield %>
   <%= render 'layouts/footer' %>
 

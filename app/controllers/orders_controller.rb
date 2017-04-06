@@ -2,6 +2,9 @@ class OrdersController < ApplicationController
   before_action :initialize_cart
   before_action :authenticate_user!, except: [:index, :show]
 
+def index
+ @orders = Order.order(created_at: :desc).all
+end
 
 
 def create
