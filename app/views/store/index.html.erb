@@ -1,0 +1,28 @@
+
+  <div class="container">
+    <% @products.in_groups_of(3, false).each do |group| %>
+    <div class="row"> <!-- New Product Row -->
+      <% group.each do |product| %>
+        <div class="col-xs-12 col-md-4">
+          <div class = "card">
+            <a class ="img-card" href="#">
+                <%= image_tag product.image %>
+            </a>
+            <br />
+            <div class = "card-content">
+            <h4 class="card-title"><%= product.name %></h4>
+              <div class="">
+                <p><%= number_to_currency product.price %></p>
+              </div>
+                <div class="card-read-more">
+                  <%= link_to "View Product", product, class: "btn btn-link btn-block" %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+
+      <% end %>
+      </div>
+    </div>

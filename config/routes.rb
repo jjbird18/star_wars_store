@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :store do
+    resources :products
+  end
 
   get 'products/index' => 'products#index'
   get 'pages/about'
@@ -26,6 +29,8 @@ Rails.application.routes.draw do
  root 'welcome#home'
 
  get 'pages/about' => 'pages#about'
+
+
 #sget 'products/product' => 'products#product'
 
 
