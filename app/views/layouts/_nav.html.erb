@@ -1,4 +1,15 @@
 <ul class="nav navbar-nav navbar-right">
+	<% if user_signed_in? && current_user.admin == 1 %>
+	<li><button class="btn btn-primary dropdown-toggle admin-btn" type="button" data-toggle="dropdown">Admin</button>
+		<ul class="dropdown-menu">
+			<li><%= link_to "Add new products", new_product_path %></li>
+			<li><%= link_to "Edit current products", products_path %></li>
+			<li><%= link_to "Customer orders", orders_path %></li>
+			<li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+
+		</ul>
+	<% end %>
+
 	<li><%= link_to "Products", store_index_path %></li>
 	<li><%= link_to "About", pages_about_path %></li>
 	<%if user_signed_in? && current_user.admin != 1 %>
@@ -15,15 +26,6 @@
     <li><%=link_to "Register", new_user_registration_path%></li>
     <li><%=link_to "Login", new_user_session_path%></li>
   <%end%>
-	<% if user_signed_in? && current_user.admin == 1 %>
-	<li><button class="btn btn-primary dropdown-toggle admin-btn" type="button" data-toggle="dropdown">Admin</button>
-		<ul class="dropdown-menu">
-			<li><%= link_to "Add new products", new_product_path %></li>
-			<li><%= link_to "Edit current products", products_path %></li>
-			<li><%= link_to "Customer orders", orders_path %></li>
-			<li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
 
-		</ul>
-	<% end %>
 
 </ul>
