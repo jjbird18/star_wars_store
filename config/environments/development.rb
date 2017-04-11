@@ -46,10 +46,23 @@ Rails.application.configure do
   config.assets.quiet = true
 
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV.fetch('S3_BUCKET_NAME'),
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      s3_region: ENV.fetch('AWS_REGION'),
+    }
+}
+
+
 Braintree::Configuration.environment = :sandbox
 Braintree::Configuration.merchant_id = '5h9th8v6tk9w7byf'
 Braintree::Configuration.public_key = 'qk2stnb9psdjvn8z'
 Braintree::Configuration.private_key = '2f361845a12f69656d2696ec90bfe41f'
+
+
 
 
   # Raises error for missing translations
